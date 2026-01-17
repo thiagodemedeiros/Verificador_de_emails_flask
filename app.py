@@ -18,6 +18,7 @@ def home():
 @app.route('/verificar_email', methods=['POST'])
 def verificar_email():
     data = request.get_json()
+    print(data)
 
     if not data or "email" not in data:
         retorno = {"erro": "Campo 'email' é obrigatório"}
