@@ -39,7 +39,6 @@ def verificar_email():
                 )
 
     print(email)
-    email = request.args.get('email')
 
     if not email:
         data = {"erro": "Parâmetro 'email' é obrigatório"}
