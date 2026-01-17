@@ -1,8 +1,15 @@
-import json
+import json, time
 from flask import Flask, request, Response
+from flask_cors import CORS
 from service.publisher_verificador_de_email import publisher_verificador_de_email
 
 app = Flask(__name__)
+
+CORS(
+    app,
+    resources={r"/*": {"origins": "https://thiagodemedeiros.github.io/Verificador_de_emails_frontend/"}},
+    supports_credentials=True
+)
 
 @app.route('/')
 def home():
