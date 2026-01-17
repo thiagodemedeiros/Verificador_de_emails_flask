@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 CORS(
     app,
-    resources={r"/*": {"origins": "https://thiagodemedeiros.github.io/Verificador_de_emails_frontend/"}},
+    resources={r"/*": {"origins": "https://thiagodemedeiros.github.io"}},
     supports_credentials=True
 )
 
@@ -15,7 +15,7 @@ CORS(
 def home():
     return "hello world"
 
-@app.route('/verificar_email', methods=['GET'])
+@app.route('/verificar_email', methods=['POST'])
 def verificar_email():
     email = request.args.get('email')
 
